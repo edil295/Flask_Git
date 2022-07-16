@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Период</th>
+      <th scope="col">Сумма</th>
+      <th scope="col">Статус</th>
+      <th scope="col">Валюта</th>
+      <th scope="col">Комментарии</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for r in record %}
+    <tr>
+      <th scope="row">{{ r.id }}</th>
+      <td>{{ r.period }}</td>
+      <td>{{ r.value }}</td>
+      <td>{{ r.status }}</td>
+      <td>{{ r.unit }}</td>
+      <td>{{ r.subject }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
